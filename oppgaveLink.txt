@@ -1,0 +1,30 @@
+https://uit.instructure.com/courses/28456/assignments/92807
+
+#Lag et system der det er mulig å lage en quiz med flere typer spørsmål (flervalg, essay, multiple choice). 
+--vi trenger å implementere essay type oppgaver
+
+#En quiz og spørsmål skal ikke gi poeng, det vil si at det er ingen rette eller feile svar. 
+--Spurt om avklaring
+
+#En administrator skal kunne gå inn på en quiz og relaterte spørsmål for gjennomgang (administrator skal altså få opp en quiz og kunne se på spørsmål for spørsmål, litt likt hvordan en deltaker gjennomfører en quiz) 
+--DONE. Implentere en "neste" knapp slik at dersom man begynner på spørsmål 4/10 og
+--vil se på resten av spørsmålene, kan man trykke på "neste".
+
+#Administrator skal så kunne trykke godkjent på et spørsmål av gangen (og en hel quiz). 
+--Vi trenger kun å godkjenne/slette svar på essay type spørsmål. 
+--Disse kan godkjennes både på oversikten over svar fra brukere og også  alle svar på et spørsmål.
+
+#Når en quiz er ferdig, skal alle brukere kunne se quizen og svarene som har vært gitt (og godkjent), dette skjer altså ikke før etter en administrator har gått gjennom og satt godkjent på hvert spørsmål. 
+--Under quizOversikt hos bruker skal ha en kolonne " Ferdige quiz" 
+--her skal quiz med status "ferdig" stå, og inne i hver av disse kan 
+--man se alle  besvarelser når alt er godkjent/avvist (legget opp slik 
+--som quizoversikt/spørsmålsoversikt hos admin). Implementere "neste" og "tilbake" knapp.
+
+#En administrator skal også kunne gi en kommentar til hvert spørsmål og en hel quiz.  
+--Kommentar kan gis til alle spørsmålstyper for svar og quizbesvarelse.
+
+#En administrator bør kunne slette spørsmål og quizer (det skal ikke forekomme upassende tekster).  
+--Dette har vi på plass
+
+
+ SESJONER
