@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+
+<h1>Svar fra bruker {{brukernavn}}, med id: {{brukerId}}</h1>
+<div id="usrSubCont">
+    <table id="usrSubTbl">
+        <thead id="usrSub">
+            <th>spørsmål</th>
+            <th class="usrSubFB">f/b</th>
+            <th class="usrSubAnswrAlt">Svaralt. 1</th>
+            <th class="usrSubAnswrAlt">Svaralt. 2</th>
+            <th class="usrSubAnswrAlt">Svaralt. 3</th>
+        </thead>
+        <tbody>
+            {% for sporsmal, riktigGalt, brukersvar in zipped %}
+            <tr>
+                <td id="usrSubSPM" rowspan="2">{{sporsmal}}</td>
+                <td class="usrSubFB">fasit</td>
+                <td class="usrSubRGBS">{{riktigGalt[0]}}</td>
+                <td class="usrSubRGBS">{{riktigGalt[1]}}</td>
+                <td class="usrSubRGBS">{{riktigGalt[2]}}</td>
+            </tr>
+            <tr>
+                <td class="usrSubFB">besvarelse</td>
+                <td class="usrSubRGBS">{{brukersvar[0]}}</td>
+                <td class="usrSubRGBS">{{brukersvar[1]}}</td>
+                <td class="usrSubRGBS">{{brukersvar[2]}}</td> 
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+</div>    
+<div>
+    <button id="spm-back-button" onclick="location.href='/quizadmin/1';">tilbake</button>
+</div>
+
+{% endblock %}
+
+</body>
+</html>

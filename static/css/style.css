@@ -1,0 +1,1188 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+table, th, td  
+{
+  border: 1px solid white;
+}
+
+a:link 
+{
+  color: #fff;
+}
+
+a:visited
+{
+  color: #fff;
+}
+
+
+/* ----------HEADER---------- */
+header
+{
+top: 0;
+margin-top: 7px;
+margin-left: 20px;    
+flex-wrap: wrap;
+z-index: 99;
+}
+
+
+/* ----------.logo---------- */
+.logo
+{
+  top: 15px;
+  left: 0px;
+  position: fixed;
+  padding-left: 25px;
+  color: #00f7ff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  pointer-events: none;
+  user-select:none;
+  flex-wrap: wrap;
+  z-index: -99;
+} 
+
+body
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #350048, #f80);
+  color: white;
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container
+{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 80%;
+  min-height: 80vh;
+  height: 80vh;
+  background: transparent;
+  border-radius: 20px;
+  backdrop-filter: transparent;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: height .2s ease;
+  overflow: hidden;
+}
+
+.container-left
+{
+  margin-left: auto;
+  margin-right: 0px;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: transparent;
+  border: solid rgba(255, 255, 255, 0.5);
+  border-width:  2px 1px 2px 2px;
+  border-radius: 20px 0 0 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;  
+}
+
+.container-right
+{
+  margin-left: 0px;
+  margin-right: auto;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: transparent;
+  border: solid rgba(255, 255, 255, 0.5);
+  border-width:  2px 2px 2px 1px;
+  border-radius: 0 20px 20px 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container .card-left
+{
+  height: 100%;
+  width: 80%;
+}
+
+.container .card-right
+{
+  height: 100%;
+  width: 50%;
+  vertical-align: middle;
+  border-top: 0px;
+  border-bottom: 0px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-width: 0 0 0 2px;
+  border-radius: 20px;
+}
+
+#btnLogout-popup
+{
+  position: fixed;
+  top: 25px;
+  right: 15%;
+  appearance: button;
+  text-align: center;
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+#btnLogout-popup:hover
+{
+  background: #fff;
+  color: #162938;
+}
+
+
+/* ---------- CSS FOR FORSIDE ------------ */
+#btnLogin-popup
+{
+  position: fixed;
+  top: 25px;
+  right: 10%;
+  appearance: button;
+  text-align: center;
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+#btnLogin-popup:hover
+{
+background: #fff;
+color: #162938;
+}
+
+#welcome-container
+{
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#user-container
+{
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto; 
+  position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+#user-container #intro-box
+{
+  position: relative;
+  width: 280px;
+  height: 400px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 0.025px solid rgba(255,255,255,0.5);
+  border-left: 0.025px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(2px);
+}
+
+#user-container #intro-box #content
+{
+  padding: 20px;
+  text-align: center;
+}
+
+#user-container #intro-box #content h2
+{
+  position: absolute;
+  top: 6%;
+  right: 17.5%;
+  font-size: 1.8em;
+  color: rgba(255,255,255,0.25);
+  pointer-events: none;
+}
+
+#user-container #intro-box #content h3
+{
+  position: absolute;
+  top: 14%;
+  right: 17.5%;
+  font-size: 1.2em;
+  color: rgba(255,255,255,0.25);
+  pointer-events: none;
+}
+
+#user-container #intro-box #content a
+{
+  position: relative;
+  display: inline-block;
+  padding: 8px 20px;
+  margin-top: 15px;
+  background: #fff;
+  color: #000;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ---------- QUIZOVERSIKT ADMIN ------------ */ 
+#admin-container h1
+{
+  z-index: 1;
+}
+
+#admin-container h1
+{
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+#admin-container table
+{
+  border: none;
+}
+
+#admin-container th
+{
+  text-align: center;
+  border-radius: 5px;
+  height: 30px;
+  text-align: center;
+}
+
+#admin-container td
+{
+  text-align: left;
+  border-radius: 5px;
+  height: 30px;
+}
+
+#active-container
+{
+  height: 100%;
+  width: 100%;
+  line-height: 175%;
+  text-align: center;
+  text-decoration:none;
+  color: #162938;
+  background: #fff;
+  border: none;
+  border-radius: 3px;
+  display: block;
+}
+
+#inactive-container
+{
+  line-height: 175%;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: block;
+  text-decoration:none;
+  width: 100px;
+  border-radius: 5px;
+}
+
+td#antallspm
+{
+  height: 100%;
+  text-align: center;
+}
+
+.admspm-container
+{
+  border: none;
+  text-decoration: none;
+}
+
+.admspm-container:hover
+{
+  border: none;
+  text-decoration: underline;
+}
+
+#admin-new
+{
+  border: none;
+}
+
+#new
+{
+  text-align: center;
+  width: 130px;
+  height: 40px;
+  line-height: 220%;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  transition: .5s;
+}
+
+#new:hover
+{
+  background: #fff;
+  color: #162938;
+}
+
+
+/* ---------- questionAnswers.html ------------ */
+#svtspm
+{
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.svtspm
+{
+  width: 100%;
+  text-align: center;
+}
+
+.qa
+{
+  margin-top: 15px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  height: 30px;
+  width: 20%;
+  text-align: center;
+}
+
+#qa-table
+{
+  border: 2px solid #fff;
+  border-radius: 5px;
+  backdrop-filter: blur(2px);
+  width: 50%;
+}
+
+
+/* ---------- adminquiz.html ------------ */
+#oversikt
+{
+  width: auto;
+  border-radius: 5px;
+}
+
+#spm-container
+{
+  float: left;
+  width: 650px;
+  border: none;
+}
+
+#spm-header
+{
+  border-radius: 5px;
+}
+
+#usr
+{
+  border-radius: 5px;
+}
+
+#usr-container
+{
+  border: none;
+  width: 100px;
+  text-align: center;
+}
+
+#usr-names
+{
+  text-decoration: none;
+}
+
+#usr-names:hover
+{
+  text-decoration: underline;
+}
+
+#spm
+{
+  text-decoration: none;
+}
+
+#spm:hover
+{
+  text-decoration: underline;
+}
+
+#oversikt th
+{
+  height: 30px;
+}
+
+#edit
+{
+  line-height: 175%;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: block;
+  text-decoration:none;
+  border-radius: 5px;
+}
+
+.delrest
+{
+  line-height: 175%;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  display: block;
+  text-decoration:none;
+  border-radius: 5px;
+}
+
+#edit:hover
+{
+  background: #fff;
+  color: #162938;
+}
+
+.delrest:hover
+{
+  background: #fff;
+  color: #162938;
+}
+
+#oversikt td
+{
+  text-align: left;
+  border-radius: 5px;
+  height: 30px;
+}
+
+
+/* ---------- spmadminedit.html ------------ */
+#spm-id-container
+{
+  border: none;
+}
+
+#spm-creation-table
+{
+  border: none;
+}
+
+.spm-creation
+{
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 7.5px;
+}
+
+textarea[name="spørsmål"]
+{
+  justify-content: center;
+  height: 62px;
+  width: 158.2px;
+  color: #fff;
+  background: transparent;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid #fff;
+}
+
+#spørsmålstype
+{
+  align-content: center;
+  border-radius: 5px;
+}
+
+.spm-alt-check
+{
+  border-radius: 5px;
+}
+
+.spm-alt-sat
+{
+  border-radius: 5px;
+}
+
+.spm-alt
+{
+  border: none;
+}
+
+select[name="spørsmålstype"]
+{
+  text-align: center;
+  display: block;
+  color: #162938;
+}
+
+textarea[name="svar1"]
+{
+  height: 41.2167px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+textarea[name="svar2"]
+{
+  height: 41.2167px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+textarea[name="svar3"]
+{
+  height: 41.2167px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+textarea[name="kategori"]
+{
+  height: 41.2167px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+#spm-buttons
+{
+  margin-top: 10px;
+  border: none;
+  flex-wrap: wrap;
+  height: 60px;
+  align-content: center;
+  justify-content: center;
+}
+
+#spm-update-button
+{
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  height: 30px;
+  width: 100px;
+  text-decoration:none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+#spm-update-button:hover
+{
+  background: #fff;
+  color: #162938;
+}
+
+#spm-back-button
+{
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  height: 30px;
+  width: 75px;
+  text-decoration:none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+#spm-back-button:hover
+{
+  background: #fff;
+  color: #162938;
+}
+
+#newQuiz-btns
+{
+  margin-top: 10px;
+}
+
+#newQuiz-button
+{
+  display: inline-block;
+  line-height: 100%;
+  text-align: center;
+  height: 30px;
+  width: 150px;
+  text-decoration:none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+#newQuiz-button:hover
+{
+  background: #fff;
+  color: #162938;
+}
+
+
+/* ---------- userSubmits.html ------------ */
+#usrSubCont
+{
+  width: 800px;
+}
+
+#usrSubTbl
+{
+  border: none;
+}
+
+#usrSubSPM
+{
+  border: 1px solid #fff;
+  border: 1px solid #fff;
+  width: 65%;
+}
+
+.usrSubFB
+{
+  border: 1px solid #fff;
+  width: 20%;
+}
+
+.usrSubAnswrAlt
+{
+  width: 5%;
+}
+
+.usrSubRGBS
+{
+  text-align: center;
+  width: 10%;
+}
+
+
+/* ---------- QUIZOVERSIKT BRUKER ------------ */
+.quiz-container
+{
+width: 500px;
+min-height: auto;
+height: auto;
+justify-content: center;
+align-items: center;
+}
+
+.quiz-container table
+{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  border: none;
+}
+
+.quiz-container h1
+{
+  text-align: center;
+}
+
+.quiz-container th
+{
+  border-radius: 5px;
+  height: 30px;
+  width: 40%;
+  text-align: center;  
+}
+
+.quiz-container td
+{
+  border-radius: 5px;
+  height: 30px;
+  width: 40%;
+  text-align: center;
+  text-decoration: none;
+}
+
+#quiz-decor
+{
+  text-decoration: none;
+}
+
+#quiz-decor:hover
+{
+  text-decoration: underline;
+}
+
+#qsur-button
+{
+  border: 2px solid white;
+  margin-top: 10px;
+  width: 100px;
+}
+
+#quizoverviewuser-button
+{
+  line-height: 100%;
+  text-align: center;
+  height: 30px;
+  width: 150px;
+  text-decoration:none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+#quizoverviewuser-button:hover
+{
+  background: #fff;
+  color: #162938;
+}
+
+
+/* ---------- ANSWERBOX ------------ */
+/* Customize the label (the container) */
+.answerbox 
+{
+  margin-top: auto;
+  align-self: center;
+  height: 25%;
+  display: block;
+  position: relative;
+  padding: auto;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+  border: solid 1px rgba(255, 255, 255, 0.5);
+  border-radius: 0px 17px 17px 0px;
+  margin: 2px;
+}
+
+.questions
+{
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  transform: translate(0, -10%);
+  top: 10%;
+  position: relative;
+}
+
+.alternatives
+{
+  text-decoration: none;
+  color: #fff;
+  transform: translate(0, -50%);
+  top: 50%;
+  position: relative;
+}
+  
+
+/* Hide the browser's default checkbox */
+.answerbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+  
+
+/* Create a custom checkbox */
+.checkmark {
+  transform: translate(0, -50%);
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  height: 25px;
+  width: 25px;
+  border-radius: 5px;
+  border: solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+
+  
+/* On mouse-over, add a grey background color */
+.answerbox:hover input ~ .checkmark 
+{
+  background-color: #908e8e;
+}
+  
+
+/* When the checkbox is checked, add a blue background */
+.answerbox input:checked ~ .checkmark 
+{
+  background-color: #2196F3;
+}
+  
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after 
+{
+  content: "";
+  position: absolute;
+  display: none;
+}
+  
+
+/* Show the checkmark when checked */
+.answerbox input:checked ~ .checkmark:after 
+{
+  display: block;
+}
+  
+
+/* Style the checkmark/indicator */
+.answerbox .checkmark:after 
+{
+  left: 30%;
+  top: 15%;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} 
+
+#container-buttons
+{
+  border: solid 4px rgb(255, 255, 255);
+}
+
+button
+{
+  display: flex;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  font-weight: 700;
+  padding-top: 5.5px;
+  padding-bottom: 5.5px;
+  padding: 7.5px;
+  user-select:none;
+  background-color: transparent;
+  color: #fff;
+  border: solid rgb(255, 255, 255, 0.5);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+
+/* Create custom radiobutton*/
+.radiobutton 
+{
+  transform: translate(0, -50%);
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+}
+
+
+/* On mouse-over, add a grey background color */
+.radiobutton
+.answerbox:hover input ~ .radiobutton 
+{
+  background-color: #908e8e;
+}
+
+
+/* When the checkbox is checked, add a blue background */
+.answerbox input:checked ~ .radiobutton 
+{
+  background-color: #2196F3;
+}
+
+  
+/* Create the checkmark/indicator (hidden when not checked) */
+.radiobutton:after 
+{
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+/* Show the checkmark when checked */
+.answerbox input:checked ~ .radiobutton:after 
+{
+  display: block;
+}
+
+
+/* Style the checkmark/indicator */
+.answerbox :after 
+{
+  left: 30%;
+  top: 15%;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} 
+
+
+/* Login box with content */
+.wrapper
+{   
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 440px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper.active-popup
+{
+  transform: scale(1);
+}
+
+.wrapper.active
+{
+  height: 520px;
+}
+
+.wrapper .form-box
+{
+  width: 100%;
+  padding: 40px;
+}
+
+.wrapper .form-box.login
+{
+  transition: transform .18s ease;
+  transform: translateX(0);
+}
+
+.wrapper.active .form-box.login
+{
+  transition: none;
+  transform: translate(-400px);
+}
+
+.form-box h2
+{
+  font-size: 2em;
+  color: #ffffff;
+  text-align: center;
+}
+
+.input-box
+{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid #ffffff;
+  margin: 30px 0;
+}
+
+.input-box label
+{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #ffffff;
+  font-weight: 500;
+  pointer-events: none;
+  transition: .5ms;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label
+{
+  top: -5px;
+}
+
+.input-box input
+{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0 35px 0 5px;
+}
+
+.input-box .icon
+{
+  height: 36px;
+  width: 36px;
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: #ffffff;
+  line-height: 57px;
+}
+.input-box .icon img
+{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.remember-forgot
+{
+  font-size: .9em;
+  color: #ffffff;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forgot label input
+{
+  accent-color: #ffffff;
+  margin-right: 3px;
+}
+
+.remember-forgot a
+{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover
+{
+  text-decoration: underline;
+}
+
+.btn
+{
+  width: 100%;
+  height: 45px;
+  background: #162938;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #fff;
+  font-weight: 500;
+}
+
+.login-register
+{
+  font-size: .9em;
+  color: #ffffff;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+
+.login-register p a
+{
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-register p a:hover
+{
+  text-decoration: underline;
+}
+
+
+/* ------------ BARE JEG SOM LEKER MEG ------------ */
+/* ------------ MVH Jan-Cato ------------ */
+body::before
+{
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom left, #540073, #f80);
+  clip-path: circle(30% at right 20%);
+  z-index: -1;
+}
+
+body::after
+{
+  content: '';
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top right, #540073, #f80);
+  clip-path: circle(20% at 10% 70%);
+  z-index: -1;
+}

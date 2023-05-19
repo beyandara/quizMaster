@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>{{tittel}}</h1>
+<div id="oversikt">
+    <table id="spm-container">
+        <thead>
+            <th id="spm-header" colspan="3">Spørsmål</th>
+        </thead>
+        <tbody>
+            {% for sporsmal in sporsmaler %}
+            <tr>
+                <td>
+                    <a id="edit" href="/spmadminedit/{{quizId}}/{{sporsmal[0]}}">Rediger</a>
+                </td>
+                
+                <td>
+                    {% if sporsmal[2] %}
+                        <a class="delrest" href="/deleteSpm/{{quizId}}/{{sporsmal[0]}}">Slett</a>
+                    {% else %} 
+                        <a class="delrest" href="/restoreSpm/{{quizId}}/{{sporsmal[0]}}">Gjenopprett</a>
+                    {% endif %}
+                </td>
+                <td colspan="1">
+                    
+                    
+                    <a id="spm" href="/spmadmin/{{ sporsmal[0] }}">{{ sporsmal[1] }}</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <table id="usr-container"> 
+        <thead>
+            <th id="usr">Brukere</th>
+        </thead>
+        <tbody>{% for bruker in brukere %}
+            <tr>
+                <td><a id="usr-names" href="/adm/user-{{bruker[1]}}">{{bruker[0]}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<button id="spm-back-button" onclick="location.href='/quizadmin';">tilbake</button>
+
+
+{% endblock %}    

@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block body %}
+<h1>{{tittel}}</h1>
+<div id="oversikt">
+  <table id="spm-container">
+    <thead>
+      <th id="spm-header" colspan="3">Spørsmål</th>
+    </thead>
+    <tbody>
+      {% for sporsmal in sporsmaler %}
+      <tr>
+        <td colspan="1">
+          <a id="spm" href="/outdatedQuiz/{{ quizId }}/{{ sporsmal[0] }}">{{ sporsmal[1] }}</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<button id="spm-back-button" onclick="location.href='/quizuser';">
+  tilbake
+</button>
+
+
+<div id="user-container">
+    <div id="intro-box">
+      <div id="content">
+        <h2>Kommentar til quizen</h2>
+        <br /><br />
+        <p>
+          her lager jeg noe tekst boks av noe slag, en if-test slik at denne dukker opp bare når admin har lagt ved en kommentar
+        </p>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

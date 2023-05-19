@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+<!-- <div> -->
+    <div id="svtspm">
+        <h1 class="svtspm">Svar til spørsmål:</h1>
+        <br>
+        <h1 class="svtspm">{{sporsmal[0]}}</h1>
+    </div>
+    <br>
+    <br>
+    <table id="qa-table">
+        <thead>
+            <th class="qa">brukerId</th>
+            <th class="qa">Brukernavn</th>
+            <th class="qa">besvarelse</th>
+        </thead>
+        <tbody>
+            {% for id, brukersvar in zipped %}
+            <tr>
+                <td class="qa">{{id[0]}}</td>
+                <td class="qa">{{id[1]}}</td>
+                <td class="qa">{{brukersvar[0]}}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+    <div>
+        <button id="spm-back-button" onclick="history.back()">tilbake</button>
+    </div>
+<!-- </div> -->
+{% endblock %}
+ 
+
+</body>
+</html>

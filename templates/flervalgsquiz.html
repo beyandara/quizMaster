@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+
+    <div class="container">
+        <div class="container-left">
+            <div class="card-left">
+                <div class="questions">{{ sporsmal }}
+                </div>
+            </div>
+        </div>    
+        <div class="container-right">
+            <form action="/quizuser/{{ quizId }}/{{ next }}/" method="POST">
+                <input type="hidden" name="quizId" value="{{ quizId }}">
+                <input type="hidden" name="spmId" value = "{{ spmId }}">
+                <input type="hidden" name="username" value = "{{ username }}">
+                <input type="hidden" name="userId" value = "{{ userId }}">
+                {% for svarAlternativ in svarAlternativer %}
+                    <label class="answerbox">
+                        <div class="alternatives">{{ svarAlternativ[0] }}
+                        </div>
+                            <input name="{{svarAlternativ[1]}}" type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                {% endfor %}
+                {% if previous %}
+                    <button type="submit" name="next" value = "{{ previous }}" >forrige</button>
+                {% endif %}
+                {% if not svar %}
+                    <button type="submit" name="next" value = "{{ next }}">neste</button>
+                {% else %}
+                    <button type="submit" name="svar" value = "{{ svar }}">Send in quiz</button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

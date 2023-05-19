@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="wrapper">
+
+    <!-- </div> -->
+    <div class="form-box login">
+        <h2>Administrator</h2>
+        <form action="/login" method="POST">
+            
+            <div class="input-box">
+                <span class="icon"><img src="static\icons\white-person.png"></span>
+                <input type="text" name="username"required>
+                <label>Brukernavn</label>
+            </div>
+            
+            <div class="input-box">
+                <span class="icon"><img src="static\icons\white-lock-closed.png"></span>
+                <input type="password" name="password" required>
+                <label>Passord</label>
+            </div>
+            
+            <!-- <div class="remember-forgot">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#"> Forgot Password?</a>
+            </div> -->
+            <button type="submit" class="btn">Logg inn</button>
+            <div class="login-register"><p>Ikke Administrator? <a href="/" class="register-link"> Gå til forsiden</a></p></div>
+        </form>
+    </div>
+    </div>
+{% endblock %}

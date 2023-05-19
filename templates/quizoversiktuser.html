@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block body %}
+
+<!-- {% if Admin %}
+        Hello, {{ Admin }}!
+    {% elif User %}
+        Hello, Stranger!
+    {% else %}
+        You have to <a href="index.html">log in</a> to see this page.
+    {% endif %} -->
+<div class="quiz-container">
+  <h1>Quizoversikt</h1>
+  <table>
+    <thead>
+      <th>Quiz</th>
+      <th>Antall spørsmål</th>
+    </thead>
+    <tbody>
+      {% for quiz in activeQuiz %}
+      <tr>
+        <td>
+          <a id="quiz-decor" href="/quizuser/{{ quiz[0] }}/0">{{ quiz[1] }}</a>
+        </td>
+        <td>{{ quiz[2] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <th>Ferdige quiz</th>
+    </thead>
+    <tbody>
+      {% for quiz in outdatedQuiz %}
+      <tr>
+        <td>
+          <a id="quiz-decor" href="/outdatedQuiz/{{quiz[0]}}">{{quiz[1]}}</a>
+        </td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+  <div>
+    <button id="quizoverviewuser-button" onclick="location.href='/';">
+      tilbake
+    </button>
+  </div>
+</div>
+{% endblock %}

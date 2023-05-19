@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{% block body %}
+
+
+
+<h1>Lag en ny quiz</h1>
+<form action="/newquizadmin" method="POST">
+   
+    <table>
+        <thead>
+            <th>tittel</th>
+            <th>antall spørsmål</th>
+        </thead>
+        <tbody>
+
+            <tr>
+
+                <td rowspan="2"><textarea name="tittel" required></textarea></td>
+                <td rowspan="2"><input type="number" name="antallSpørsmål" min="5" max="15" value="10" required></textarea></td>
+                
+              
+            </tr>
+                    </tbody>
+    </table>
+    {% if error %}
+        <h3>Quiz navnet er opptatt</h3>
+    {% endif %}
+<div id="newQuiz-btns">    
+    <button id="spm-back-button" onclick="location.href='/quizadmin';">tilbake</button>
+    <button id="newQuiz-button" type="submit">Opprett ny quiz</button>
+</div>
+</form>
+{% endblock %}
+
+
+</body>
+</html>

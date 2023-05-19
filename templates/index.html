@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block header %} {% if not
+current_user.is_authenticated %}
+<button id="btnLogin-popup" onclick="location.href='/login';">Logg inn</button>
+{% endif %} {% endblock %} {% block body %}
+
+<div id="index-container">
+  <div id="welcome-container">
+    <h1>{{ msg }}</h1>
+  </div>
+
+  <div id="user-container">
+    <div id="intro-box">
+      <div id="content">
+        <h2>Introduserer</h2>
+        <h3>QuizGruppe 1</h3>
+        <br /><br />
+        <p>
+          Her har vi jobbet helsa av oss for å få et produkt som er så godt som
+          mulig, samtidig som at vi ikke implementerer for mye. Vi håper dette
+          faller i smak. <br />PS. anbefaler quizen: "Hvor mye arbeid er lagt i
+          dette prosjektet". Uansett så håper vi at dere har det så moro som
+          mulig mens dere ser på oppgaven vår.
+        </p>
+        <br /><a href="/quizuser">Ta en Quiz!</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

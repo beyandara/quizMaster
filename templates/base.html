@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>DarkSide</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="container-logo"></div>
+            {% if current_user.is_authenticated %}
+            <button id="btnLogout-popup" onclick="location.href='/logout';" >Logg ut</button>
+            {% endif %}
+            <h1 class="logo">DarkSide</h1>
+            {% block header %}
+            {% endblock %}
+        </header>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

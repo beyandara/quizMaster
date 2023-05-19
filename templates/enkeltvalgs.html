@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <div class="container">
+        <div class="container-left">
+            <div class="card-left">
+                <div class="questions">{{ sporsmal }}
+                </div>
+            </div>
+        </div>    
+        <div class="container-right">
+            <form action="/quizuser/{{ quizId }}/{{ next }}/" method="POST">
+                <input type="hidden" name="quizId" value="{{ quizId }}">
+                <input type="hidden" name="spmId" value = "{{ spmId }}">
+                <input type="hidden" name="username" value = "{{ username }}">
+                <input type="hidden" name="userId" value = "{{ userId }}">
+                {% for svarAlternativ in svarAlternativer %}
+                    <label class="answerbox">
+                        <label for = "{{svarAlternativ[1]}}" class="alternatives">{{ svarAlternativ[0]}}
+                        </label>
+                        <input id="{{svarAlternativ[1]}}" type="radio" class="form-check-input" name="svarId" value="{{svarAlternativ[1]}}" required>
+                        <span class="radiobutton"></span>
+                    </label>
+            
+                {% endfor %}
+                {% if previous %}
+                    <button type="submit" name="next" value = "{{ previous }}">forrige</button>
+                {% endif %}
+                {% if not svar %}
+                    <button id="nextButton" type="submit" name="next" value = "{{ next }}">neste</button> 
+                {% else %}
+                    <button id="nextButton" type="submit" name="svar" value = "{{ svar }}">Send in quiz</button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("nextButton").onclick = function(){
+            if(document.querySelector('input[name="svarId"]:checked') ==null){
+                var temp = document.createTextNode('Velg et alternativ! ');
+                this.parentNode.appendChild(temp);
+                setTimeout(()=>{
+                    temp.remove()
+                },1000)
+            }
+        }
+    </script>
+{% endblock %}

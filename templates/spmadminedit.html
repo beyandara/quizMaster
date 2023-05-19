@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block body %}
+
+
+
+<h1 id="spm-id">SpørsmålsId: {{spmId}}</h1>
+<form id="spm-id-container" action="/update/{{spmId}}" method="POST">
+    <input type="hidden" name="id1" value="{{svarAlternativer[0][2]}}">
+    <input type="hidden" name="id2" value="{{svarAlternativer[1][2]}}">
+    <input type="hidden" name="id3" value="{{svarAlternativer[2][2]}}">
+    <input type="hidden" name="quizId" value="{{quizId}}">
+    <table id="spm-creation-table">
+        <thead id="spm-creation-container">
+            <th class="spm-creation">Spørsmål</th>
+            <th class="spm-creation">Spørsmålstype</th>
+            <th class="spm-creation">Fasit/Svar</th>
+            <th class="spm-creation">Svaralternativ1</th>
+            <th class="spm-creation">Svaralternativ2</th>
+            <th class="spm-creation">Svaralternativ3</th>
+            <th class="spm-creation">Kategori</th>
+            <th class="spm-creation">Kommentar</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="spm-alt"><textarea name="spørsmål" required>{{sporsmal[0]}}</textarea></td>
+                <td id="spørsmålstype"><select name="spørsmålstype" id="spørsmålstype" required>
+                    <option {% if sporsmal[1] == "enkeltvalgs" %} selected {% endif %} value="enkeltvalgs">enkeltvalgs</option>
+                    <option {% if sporsmal[1] == "flervalgs" %} selected {% endif %} value="flervalgs">flervalgs</option>
+                    <option {% if sporsmal[1] == "essay" %} selected {% endif %}value="essay">essay</option>
+                </select></td> 
+                <td class="spm-alt-sat">Svar alternativ tekst</td>
+                <td class="spm-alt-sat"><textarea name="svar1" required>{{svarAlternativer[0][1]}}</textarea></td>
+                <td class="spm-alt-sat"><textarea name="svar2" required>{{svarAlternativer[1][1]}}</textarea></td>
+                <td class="spm-alt-sat"><textarea name="svar3" required>{{svarAlternativer[2][1]}}</textarea></td> 
+                <td class="spm-alt-sat" rowspan="2"><textarea name="kategori" required>{{kategori}}</textarea></td>
+                <td class="spm-alt"><textarea name="spørsmål" required>Legg til en kommentar til spørsmålet, som skal vises hos brukerne når quizen er ferdig</textarea></td>
+               
+            </tr>
+            
+        </tbody>
+    </table>
+    <div id="spm-buttons">
+        <button id="spm-update-button" type="submit">Oppdater</button>
+        <button id="spm-back-button" onclick="location.href='/quizadmin';">tilbake</button>
+    </div>
+
+</form>
+{% endblock %}
+
+
+</body>
+</html>

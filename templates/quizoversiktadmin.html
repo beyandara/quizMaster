@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block body %}
+
+{% if msg %} 
+{{msg}}
+{% endif %}
+<div id="admin-container">
+
+    <h1>Quizoversikt</h1>
+    <table>
+        <thead>
+            <!-- <th colspan="1">Active/Inactive</th> -->
+            <th colspan="2">Quiz</th>
+            <th colspan="1">&nbsp;&nbsp;Antall spørsmål&nbsp;&nbsp;</th>
+        </thead>
+        <tbody>
+            {% for quiz in quizes %}
+            <tr>
+                <td colspan="1">
+                    <select
+                    onchange="window.location.href = this.value"
+                    id="valg"
+                    name=""> 
+                    <option {% if quiz[1] == 'aktiv' %} selected {% endif %} value="/activatequiz/{{quiz[0]}}">aktiv</option>
+                    <option {% if quiz[1] == 'inaktiv' %} selected {% endif %} value="/inactivatequiz/{{quiz[0]}}">inaktiv</option>
+                    <option {% if quiz[1] == 'ferdig' %} selected {% endif %} value="/endquiz/{{quiz[0]}}">ferdig</option>
+                    <option {% if quiz[1] == 'godkjent' %} selected {% endif %} value="/approvequiz/{{quiz[0]}}">godkjent</option>
+                  </select>
+                  <script>
+             
+                    if (localStorage.getItem('lastSelectedOption')) {
+                      document.getElementById('valg').value = localStorage.getItem('lastSelectedOption');
+                    }
+                
+                    document.getElementById('valg').addEventListener('change', function() {
+                      localStorage.setItem('lastSelectedOption', this.value);
+                    });
+                  </script>
+                </td>    
+                <td colspan="1">
+                        <a class="admspm-container" href="/quizadmin/{{ quiz[0] }}">&nbsp;{{ quiz[2] }}&nbsp;</a></td>
+                </td>
+                
+                <td id="antallspm">{{ quiz[3]  }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button id="admin-new">
+        <a href="/newquizadmin" id="new">Legg til ny quiz</a>
+    </button>
+
+  
+{% endblock %}
